@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head> 
+     <title>Page</title>
+     <link rel="stylesheet" href="./css.css">
+</head>
+<body>
+  <div id="content">
+    <p id="client">kkkk</p>
+    <form id="form" action="http://127.0.0.1:2269" method="GET">
+      <input type="text" id="input" name="key">
+      <input type="submit" id="submit">
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('form');
+
+    form.addEventListener('submit', (event) => {
+  event.preventDefault(); // منع سلوك الافتراضي لحدث submit
+
+  const key = document.getElementById('input').value;
+
+  fetch(`http://127.0.0.1:2269/?key=${encodeURIComponent(key)}`)
+    .then(response => response.text())
+    .then(value => {
+      const clientParagraph = document.getElementById('client');
+      clientParagraph.innerText = value;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+});
+  </script>
+</body>
+</html>
+
+
+

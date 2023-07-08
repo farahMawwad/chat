@@ -1,0 +1,27 @@
+#content{
+    width: 80%;
+    height: 700px;
+    background-color: aquamarine;
+    margin-left: 10%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 80% 20%;
+
+}
+#form{
+    grid-row-start: 2;
+    grid-template-columns: 1;
+    display: flex;
+}
+#input{
+    width: 90%;
+    height: 90%;
+margin-left: 2%;
+}
+#submit{
+    width: 10%;
+    height: 30%;
+margin-left: 1%;
+margin-top: 2.5%;
+margin-right: 1%;
+}
